@@ -9,15 +9,32 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: "Your input description here"
+  keygen-token:
+    description: "keygen auth token"
     required: true
-    default: "1000"
+  keygen-account-id:
+    description: "keygen account ID"
+    required: true
+  keygen-package-id:
+    description: "keygen package ID"
+    required: true
+  keygen-product-id:
+    description: "keygen product ID"
+    required: true
+  release-name:
+    description: "keygen release name"
+    required: true
+  release-channel:
+    description: "keygen release channel"
+    required: true
+  github-tag:
+    description: "github tag"
+    required: true
 
 # Define your outputs here.
 outputs:
-  time:
-    description: "Your output description here"
+  release-id:
+    description: "keygen release ID"
 
 runs:
   using: node20

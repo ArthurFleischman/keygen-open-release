@@ -1,6 +1,4 @@
 import * as core from '@actions/core'
-
-
 import { openRelease } from './utils/keygen-utils'
 import { ReleaseChannel } from './models/open-release/release-channel'
 
@@ -17,6 +15,7 @@ export async function run(): Promise<void> {
     const keygenProductID: string = core.getInput('keygen-product-id', { required: true })
     const keygenPackageID: string = core.getInput('keygen-package-id', { required: true })
     const keygenAccountID: string = core.getInput('keygen-account-id', { required: true })
+
     core.setSecret(keygenToken);
     core.setSecret(keygenProductID);
     core.setSecret(keygenPackageID);
