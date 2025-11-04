@@ -1,1 +1,1 @@
-export type ReleaseChannel = "stable" | "rc" | "beta" | "alpha" | "dev";
+export type ReleaseChannel = 'stable' | 'rc' | 'beta' | 'alpha' | 'dev'

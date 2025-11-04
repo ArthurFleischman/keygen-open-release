@@ -1,20 +1,19 @@
-import { ReleaseAttributes } from "./attributes-model";
-import { ReleaseRelationships } from "./relationship-model";
-
-
-
-
+import { ReleaseAttributes } from './attributes-model'
+import { ReleaseRelationships } from './relationship-model'
 
 export class OpenReleaseModel {
-  type: string = "release";
-  attributes: ReleaseAttributes;
-  relationships: ReleaseRelationships;
+  type = 'release'
+  attributes: ReleaseAttributes
+  relationships: ReleaseRelationships
 
-  constructor(attributes: ReleaseAttributes, relationships: ReleaseRelationships) {
-    this.attributes = attributes;
-    this.relationships = relationships;
+  constructor(
+    attributes: ReleaseAttributes,
+    relationships: ReleaseRelationships
+  ) {
+    this.attributes = attributes
+    this.relationships = relationships
   }
   toJson(): string {
-    return JSON.stringify({ data: this });
+    return JSON.stringify({ data: this })
   }
 }
