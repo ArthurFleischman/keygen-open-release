@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - 'releases/*'
+      - "releases/*"
 
 permissions:
   contents: read
@@ -55,8 +55,16 @@ jobs:
       - name: Test Local Action
         id: test-action
         uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          milliseconds: 1000
+          keygen-token: "${{ secrets.KEYGEN_TOKEN }}"
+          keygen-account-id: "${{ secrets.KEYGEN_ACCOUNT_ID }}"
+          keygen-package-id: "${{ secrets.KEYGEN_PACKAGE_ID }}"
+          keygen-product-id: "${{ secrets.KEYGEN_PRODUCT_ID }}"
+          release-name: "${{ github.ref_name }}"
+          release-channel: "dev"
+          github-tag: "${{ github.ref_name }}"
 
       - name: Print Output
         id: output
